@@ -1,4 +1,5 @@
 import "../style/index.css";
+import "../index.html";
 
 /**
  *  EDIT ONLY INSIDE THIS RENDER FUNCTION
@@ -39,11 +40,12 @@ function render(variables = {}) {
           <h3>${variables.city == null ? "Miami" : variables.city}
           ${variables.country == null ? "USA" : variables.country}</h3>
           <ul class=${
-            variables.socialMediaPosition == "position-right"
-              ? "position-right"
-              : "position"
+            variables.socialMediaPosition
+              ? variables.socialMediaPosition
+              : "position-right"
           }>
       
+          
           <li><a href="https://twitter.com/${
             variables.twitter == null ? " Twitter" : variables.twitter
           }"> <i class="fab fa-twitter"></i></a></li>
@@ -60,7 +62,6 @@ function render(variables = {}) {
         </div>
     `;
 }
-
 /**
  * Don't change any of the lines below, here is where we do the logic for the dropdowns
  */
